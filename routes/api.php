@@ -14,6 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use App\Http\Controllers\TenantController;
+
+Route::prefix('tenants')->group(function () {
+    Route::post('add', [TenantController::class, 'create']);
+    Route::get('/', [TenantController::class, 'index']);
+    Route::delete('/{id}', [TenantController::class, 'delete']);
+});
+
+Route::prefix('domains')->group(function () {
+    Route::get('/', [TenantController::class, 'showDomains']);
+});
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });

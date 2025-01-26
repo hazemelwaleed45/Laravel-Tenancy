@@ -13,6 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// use App\Http\Controllers\TenantController;
+
+// Route::prefix('tenants')->group(function () {
+//     Route::post('add', [TenantController::class, 'create']);
+//     Route::get('/', [TenantController::class, 'index']);
+// });
+
+// Route::prefix('domains')->group(function () {
+//     Route::get('/', [TenantController::class, 'showDomains']);
+// });
+
 Route::get('/', function () {
     return view('welcome');
 });
